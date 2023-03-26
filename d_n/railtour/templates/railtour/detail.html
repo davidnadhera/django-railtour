@@ -1,0 +1,24 @@
+<hr>
+<table>
+    <tr>
+        <th>Příjezd</th>
+        <th>Stanice</th>
+        <th>Odjezd</th>
+        <th>Vlak</th>
+    </tr>
+    <tr>
+        <td></td>
+    {% for spoj in spoje %}
+        <td class='left'>{{spoj.stanice}}</td>
+        <td>{{spoj.odjezd|time:"G:i"}}</td>
+        <td>{{spoj.vlak}}</td>
+    </tr>
+    <tr>
+        <td>{{spoj.prijezd|time:"G:i"}}</td>
+    {% endfor %}
+        <td class='left'>{{cil}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<hr>

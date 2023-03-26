@@ -1,0 +1,8 @@
+<select class="form-control selectpicker" data-dropup-auto="false"
+  data-live-search-normalize="true" data-live-search="true" id="{{id}}" name="{{name}}">
+   {% for chp in chps %}
+       <option data-tokens="{{chp.assoc_text}}" value="{{chp.stanice_ptr_id}}" {% if chp.stanice_ptr_id == selected %}
+                     selected="selected"
+                   {% endif %}>{{chp.nazev}}</option>
+   {% endfor %}
+</select>

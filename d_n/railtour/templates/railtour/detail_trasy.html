@@ -1,0 +1,34 @@
+    <hr>
+        <table>
+            <tr>
+                <th>Odkud</th>
+                <th>Kam</th>
+                <th>Odjezd</th>
+                <th>Příjezd</th>
+                <th>Body</th>
+                <th>č</th>
+                <th>k</th>
+                <th>d</th>
+                <th>p</th>
+                <th>Km</th>
+                <th>Detail</th>
+            </tr>
+            {% for hrana in hrany %}
+            <tr>
+                <td>{{hrana.nazev_od}}</td>
+                <td>{{hrana.nazev_do}}</td>
+                <td>{{hrana.odjezd|date:"j.n.Y G:i"}}</td>
+                <td>{{hrana.prijezd|date:"j.n.Y G:i"}}</td>
+                <td>{{hrana.body}}</td>
+                <td>{{hrana.body_premie}}</td>
+                <td>{{hrana.body_kraje}}</td>
+                <td>{{hrana.body_inday}}</td>
+                <td>{{hrana.body_postupka}}</td>
+                <td>{{hrana.km|floatformat:1}}</td>
+                <td><button type='button' id='btn{{id}}_{{forloop.counter}}' class='btn btn-info'
+                            onclick="showDetail('{{id}}_{{forloop.counter}}',{{hrana.od_id}},{{hrana.do_id}},{{hrana.id}})">Detail</button></td>
+                <td><div id='detail{{id}}_{{forloop.counter}}'></div></td>
+            </tr>
+            {% endfor %}
+        </table>
+    <hr>
